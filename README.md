@@ -6,7 +6,7 @@ Ejecución de un DAG en airflow con Docker.
 
 ## Comandos utilizados
 
-# Comandos principales para meterse en el directorio, crear la imagen, etc.
+### Comandos principales para meterse en el directorio, crear la imagen, etc.
 
 cd C:\Users\alvar\Desktop\DevOps\entorno_airflow
 
