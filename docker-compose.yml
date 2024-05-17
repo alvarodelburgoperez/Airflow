@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  airflow-scheduler:
+    image: apache/airflow:latest
+    command: airflow scheduler
+    volumes:
+      - airflow-dags:/opt/airflow/dags
+      - airflow-logs:/opt/airflow/logs
+
+  airflow-webserver:
+    image: apache/airflow:latest
+    command: airflow webserver
+    depends_on:
+      - airflow-scheduler
+    ports:
+      - "8080:8080"
+    volumes:
+      - airflow-dags:/opt/airflow/dags
+      - airflow-logs:/opt/airflow/logs
+
+  airflow-init:
+    image: apache/airflow:latest
+    command: airflow db init
+    depends_on:
+      - airflow-webserver
+
+volumes:
+  airflow-dags:
+  airflow-logs:
