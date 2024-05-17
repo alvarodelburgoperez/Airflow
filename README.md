@@ -46,7 +46,7 @@ airflow users create \
     --firstname alvaro \
     --lastname "del burgo" \
     --role Admin \
-    --email alvarodelburgoperez@gmail.com \
+    --email user@example.com \
     --password 1234
 
 
